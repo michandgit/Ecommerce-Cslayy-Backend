@@ -87,6 +87,7 @@ export const logout = (req, res) => {
           secure: true,
           sameSite: "none",
           expires: new Date(0),
+          domain: ".onrender.com"
         });
     return res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
