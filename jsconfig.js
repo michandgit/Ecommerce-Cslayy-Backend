@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node"
+  },
+  "exclude": ["node_modules"]
+}
