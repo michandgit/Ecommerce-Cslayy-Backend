@@ -6,7 +6,6 @@ export const getAllProducts = async (req , res) =>{
     try{
 
         const data = await Product.find();
-        console.log(data);
         return res.status(200).json({data});
     }catch(error){
         res.status(500).json({message: "Server Error"});
@@ -43,7 +42,6 @@ export const getLatestProducts = async (req,res) =>{
         const products = await Product.find().sort({createdAt: -1}).limit(4);
         return res.status(200).json({products});
     } catch (error) {
-         console.error("Error fetching latest products:", error);
          res.status(500).json({ message: error.message });
        }
 }

@@ -31,7 +31,6 @@ export const login = async (req, res) => {
       email: admin.email,
     });
   } catch (error) {
-    console.error("Error in login controller:", error.message);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
@@ -94,7 +93,6 @@ export const logout = (req, res) => {
 // Check authentication
 export const checkAuth = (req, res) => {
   try {
-    console.log(req.user);
     return res.status(200).json(req.user);
   } catch (error) {
     console.error("Error in checkAuth controller:", error.message);

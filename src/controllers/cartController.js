@@ -6,10 +6,8 @@ export const addToCart = async (req, res) => {
   try {
     const userId = req.user._id;
     const { productId } = req.body;
-    console.log("ADD TO CART BODY:", req.body);
 
     const product = await Product.findById(productId);
-    console.log("found product in backend:", product);
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
@@ -50,7 +48,6 @@ export const addToCart = async (req, res) => {
     await cart.save();
     await cart.populate("items.product");
 
-    console.log("Cart now:" , cart);
     return res.status(200).json({ message: "Item added to cart", cart });
   } catch (error) {
     console.error("Error adding to cart:", error);

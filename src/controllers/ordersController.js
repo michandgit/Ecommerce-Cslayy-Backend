@@ -61,7 +61,6 @@ export const initializeCheckout = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Checkout initialization error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -343,7 +342,6 @@ export const updateOrderStatus = async (req, res) => {
 export const deleteOrder = async (req, res) => {
   try {
     const { orderId } = req.params;
-    console.log("Received orderId:", req.params);
 
     const order = await Order.findById(orderId);
     if (!order) {

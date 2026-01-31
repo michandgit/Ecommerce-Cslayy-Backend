@@ -30,7 +30,6 @@ export const login = async (req, res) => {
       email: user.email,
     });
   } catch (error) {
-    console.log("Error in login controller", error.message);
     return res.status(500).json({ message: "Internal Server Error!" });
   }
 };
@@ -72,7 +71,6 @@ export const register = async (req, res) => {
       email: newUser.email,
     });
   } catch (error) {
-    console.log("Error in signup controller", error.message);
     return res.status(500).json({ message: "Server Error" });
   }
 };
@@ -83,7 +81,6 @@ export const logout = (req, res) => {
     res.clearCookie("jwt");
     return res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
-    console.log("Error in logout controller", error.message);
     return res.status(500).json({ message: "Internal Server Error!" });
   }
 };
@@ -92,15 +89,11 @@ export const logout = (req, res) => {
 export const checkAuth = (req, res) => {
   try {
     const isAuthenticated = !!req.user;
-
-    console.log("Authenticated user:", req.user);
-
         return res.status(200).json({
           isAuthenticated,
           user: req.user,
         });
   } catch (error) {
-    console.log("Error in checkAuth controller", error.message);
     return res.status(500).json({ message: "Internal Server Error!" });
   }
 };

@@ -13,9 +13,6 @@ import reviewRoutes from "./src/routes/reviewRoutes.js";
 import adminAuthRoutes from "./src/routes/adminauthRoutes.js";
 import cloudinary from './src/lib/cloudinary.js';
 
-console.log("Loaded MONGO_URI:", process.env.MONGO_URI);
-console.log("Loaded CLOUDINARY:", process.env.CLOUDINARY_CLOUD_NAME);
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 connectDb();
