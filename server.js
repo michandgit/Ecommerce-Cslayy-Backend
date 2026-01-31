@@ -10,7 +10,7 @@ import cartRoutes from "./src/routes/cartRoutes.js";
 import orderRoutes from "./src/routes/orderRoutes.js";
 import paymentRoutes from "./src/routes/paymentRoutes.js";
 import reviewRoutes from "./src/routes/reviewRoutes.js";
-import adminAuthRoutes from "./src/routes/adminAuthRoutes.js";
+import adminAuthRoutes from "./src/routes/adminAuthroutes.js";
 import cloudinary from './src/lib/cloudinary.js';
 
 const app = express();
