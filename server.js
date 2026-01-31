@@ -20,7 +20,7 @@ connectDb();
 
 app.use(
   cors({
-    origin: "https://ecommerce-c-slayy-frontend-iywi30grv-michandgits-projects.vercel.app",
+    origin: "https://ecommerce-c-slayy-frontend.vercel.app",
     credentials: true,
   })
 );
