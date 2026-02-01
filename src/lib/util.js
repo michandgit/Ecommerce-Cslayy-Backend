@@ -10,7 +10,6 @@ export const generateToken = (userId ,res ) =>{
     maxAge: 7*24*60*60*1000,
     secure: true,
     sameSite: "none",
-     domain: ".onrender.com"
     });
 
 
@@ -29,7 +28,6 @@ export const generateTokenAdmin = (userId ,res ) =>{
     maxAge: 7*24*60*60*1000,
     secure: true,
     sameSite: "none",
-     domain: ".onrender.com"
     });
 
 
