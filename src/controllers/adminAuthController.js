@@ -56,9 +56,14 @@ export const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    const firstName = name.split(" ")[0];
+    const lastName = name.split(" ")[1] || ".";
 
     const newAdmin = new Admin({
-      name,
+      name:{
+      firstName,
+      lastName
+      },
       email,
       password: hashedPassword,
     });
